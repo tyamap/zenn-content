@@ -9,7 +9,7 @@ topics:
   - "gas"
   - "google-script-app"
 published: false
-published_at: "2023-08-300 20:00"
+published_at: "2023-08-30 20:00"
 ---
 
 ## 何をするか
