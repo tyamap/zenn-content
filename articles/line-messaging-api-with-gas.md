@@ -11,15 +11,16 @@ published: true
 published_at: "2023-08-21 21:30"
 ---
 
-## 何をするか
+## はじめに
+### 何をするか
 - LINE Messaging API の webhookイベントを GAS で受け付けて処理したい
 - 今回は、処理日時とメッセージ送信者のUserID、メッセージ本文をスプレッドシートに記録する処理とする
-## 前提
+### 前提
 - LINE Messaging API を作成済み
 - GAS をウェブアプリとしてデプロイ済み
 - Messaging API の webhook エンドポイントをGASのデプロイURLに設定済み
 前提となる LINE bot の開設方法や、GASの設定は今後投稿予定です✌️
-## 流れ
+### 流れ
 1. GAS の doPost 関数で POST を受け付ける
 1. イベントの種類を判別し、必要な情報を取り出す
 1. スプレッドシートに記述する
