@@ -1,15 +1,14 @@
 ---
-title: "LINE Messaging API へのメッセージ を GAS で受け取って処理する"
+title: "LINE Messaging API へのメッセージ を GAS で処理する"
 emoji: "💬"
 type: "tech"
 topics:
-  - "LINE"
-  - "bot"
-  - "line-messaging-api"
+  - "line"
+  - "linebot"
   - "gas"
-  - "google-script-app"
-published: false
-published_at: "2023-08-30 20:00"
+  - "tips"
+published: true
+published_at: "2023-08-21 21:30"
 ---
 
 ## 何をするか
@@ -19,12 +18,13 @@ published_at: "2023-08-30 20:00"
 - LINE Messaging API を作成済み
 - GAS をウェブアプリとしてデプロイ済み
 - Messaging API の webhook エンドポイントをGASのデプロイURLに設定済み
+前提となる LINE bot の開設方法や、GASの設定は今後投稿予定です✌️
 ## 流れ
-- GAS の doPost 関数で POST を受け付ける
-- イベントの種類を判別し、必要な情報を取り出す
-- スプレッドシートに記述する
+1. GAS の doPost 関数で POST を受け付ける
+1. イベントの種類を判別し、必要な情報を取り出す
+1. スプレッドシートに記述する
 ## スクリプト
-```
+```javascript
 const SPREAD_SHEET_ID = '{スプレッドシートのID}'
 const SHEET_NAME = '{シート名}'
 
@@ -40,6 +40,7 @@ function addRecord(records = []) {
 
 // POSTリクエストに対する処理
 function doPost(e) {
+  // データが空なら処理しない
   if (e == null || e.postData == null || e.postData.contents == null) return;
 
   // リクエストを受け取ってオブジェクト化
@@ -69,32 +70,35 @@ function doPost(e) {
 }
 ```
 ## 解説
-基本的にはコメントにある通り。
-下記は捕捉として。
+基本的にはコメントにある通りですが、捕捉として解説します。
 ### addRecord(records) 関数について
-独自で定義する関数。
-デバッグ目的で多用するため、関数として定義しておくと便利。
-`range.setValues` は二次元配列を複数行のセルに記述する仕様なので、配列の形に注意。
-今回は`record` 引数に一行分のデータとして一次元配列を受け取り、 `setValues` 実行時に二次元配列として渡すことにしている。
+独自で定義する関数です。
+デバッグ目的で多用するため、関数として定義しておくと便利です。
+`Range.setValues()` は引数として二次元配列を受け取り、複数行のセルに記述する仕様なので注意してください。
+今回は`record` 引数に一行分のデータとして一次元配列を受け取り、 `setValues` 実行時に二次元配列として渡すことにしています。
 ### doPost(e) 関数について
-GAS をウェブアプリとしてデプロイしている場合、公開URLにPOSTリクエストが発生した際に実行される関数。
-`e` 引数はリクエストのイベント情報。 
-`e.postData.contents` でリクエストのコンテンツを取得できる。
-JSONテキスト形式なので、 `JSON.parse()` でオブジェクト化しておく。
-ウェブアプリとしてのGASや `e` のデータ構造の仕様については下記リンクを参照。
+GAS をウェブアプリとしてデプロイしている場合、公開URLにPOSTリクエストが発生した際に実行される関数です。`e` 引数はリクエストのイベント情報です。
+`e.postData.contents` でリクエストのコンテンツを取得できます。JSONテキスト形式なので、 `JSON.parse()` でオブジェクト化してお来ます。
+ウェブアプリとしてGASの詳細や `e` のデータ構造については下記リンクを参照してください。
 [ウェブアプリ  |  Apps Script  |  Google for Developers](https://developers.google.com/apps-script/guides/web?hl=ja)
 ### Messaging API webhook の JSON について
-`requestJSON.events` が今回取り扱うデータ。
-`requestJSON` の仕様については下記のリンクを参照。
+`requestJSON.events` が今回取り扱うデータです。
+Messaging API が POST する JSON の仕様については下記のリンクを参照してください。
 [Messaging APIリファレンス](https://developers.line.biz/ja/reference/messaging-api/)
-上記リファレンスにもある通り、 `events` は配列として渡ってくるので注意する。
+上記リファレンスにもある通り、 `events` は配列として渡ってくるので注意します。
 ## 動作確認
 ### 定数の設定
-スクリプト冒頭の定数定義箇所に下記文字列を記述しておく。
-`SPREAD_SHEET_ID`
-データを記録したいスプレッドシートのURL末尾の文字列。
-`SHEET_NAME`
-データを記録したいシート名。スプレッドシート作成時の初期値は「シート1」
+スクリプト冒頭の定数定義箇所に下記文字列を記述しておきます。
+- `SPREAD_SHEET_ID`
+  - データを記録したいスプレッドシートのURL末尾の文字列
+  - スプレッドシートを開いた時のURL `https://docs.google.com/spreadsheets/d/xxxxxxxxxx/edit#gid=0` の `xxxxxxxxxx` の部分
+- `SHEET_NAME`
+  - データを記録したいシート名
+  - スプレッドシート作成時の初期値は「シート1」
 ### LINE でメッセージを送信
-LINE bot (Messaging API）アカウントにメッセージを送信する。
-指定したシートの末尾に情報が記述されれば成功
+LINE bot (Messaging API）アカウントにメッセージを送信して、
+指定したシートの末尾に情報が記述されれば成功です。
+
+## おわりに
+不明点等あればコメントください！
+前提となる LINE bot の開設方法や、GASの設定、トラブルシューティングは今後投稿予定です✌️
