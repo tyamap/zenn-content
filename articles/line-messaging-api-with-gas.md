@@ -19,6 +19,7 @@ published_at: "2023-08-21 21:30"
 - LINE Messaging API を作成済み
 - GAS をウェブアプリとしてデプロイ済み
 - Messaging API の webhook エンドポイントをGASのデプロイURLに設定済み
+
 前提となる LINE bot の開設方法や、GASの設定は今後投稿予定です✌️
 ### 流れ
 1. GAS の doPost 関数で POST を受け付ける
