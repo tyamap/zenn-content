@@ -84,8 +84,8 @@ puts books.class.superclass
 - `ActiveRecord::Explain`
 - `ActiveRecord::Delegation`
 
-## とりあえず押さえておきたい ActiveRecord::Relation のアトリビュート
-### `@loaded`
+### とりあえず押さえておきたい ActiveRecord::Relation のアトリビュート
+#### `@loaded`
 SQLクエリを発行して オブジェクトを取得したことがあるかのフラグ
 
 ```ruby
@@ -94,7 +94,7 @@ books = Book.all => Book Load (0.9ms)  SELECT `books`.* FROM `books`
 books.loaded? => true
 ```
 
-### `@records`
+#### `@records`
 SQLクエリを発行して取得した条件に合うオブジェクトをメモ化した配列
 
 ```ruby
