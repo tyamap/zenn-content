@@ -3,7 +3,7 @@ title: "日々の情報収集のすゝめ"
 emoji: "📡"
 type: "idea" # tech: 技術記事 / idea: アイデア
 topics: ["tips", "メディア", "情報収集", "駆け出しエンジニア"]
-published: false
+published: true
 published_at: "2024-04-11 20:30"
 ---
 
