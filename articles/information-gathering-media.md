@@ -15,8 +15,8 @@ published: false
 他にもおすすめのメディアや方法がありましたら、ぜひコメントください！
 
 ## Qiita, Zenn などの技術ブログプラットフォームの週間トレンド
-* https://qiita.com/Qiita/items/b5c1550c969776b65b9b
-* https://zenn.dev/articles/explore
+* [Qiita 週間トレンド記事一覧](https://qiita.com/Qiita/items/b5c1550c969776b65b9b)
+* [Zenn 記事を探す](https://zenn.dev/articles/explore)
 
 広く知られる技術ブログプラットフォームの、週間ランキングTop10 は毎週目を通すと良いです。
 業務で使わない技術であったとしても、多くの人に読まれているということは、汎用的な知見や広い分野のトレンドであるということです。
@@ -25,25 +25,25 @@ published: false
 様々な人が情報発信する技術ブログプラットフォームにおける、情報の質を見極める力をつけるためにも、より多くの情報に接しておくことが肝要です。
 （例えば手順を列挙してるだけの情報や、エラーの解決方法を述べるだけで解説や考察の無い記事は、情報としての質は低いと言えますね。その場合は自分で周辺情報を調べて深掘りするなどの判断をします）
 
-## ITmedia, DeveloperIO などの大手技術メディア
-* https://www.itmedia.co.jp
-* https://dev.classmethod.jp
+## ITmedia, DevelopersIO などの大手技術メディア
+* [IT総合情報ポータル「ITmedia」](https://www.itmedia.co.jp)
+* [クラスメソッド発「やってみた」系技術メディア | DevelopersIO](https://dev.classmethod.jp)
 
 これらは上記のブログプラットフォームとは異なり、投稿者が限られているので、情報の質は高いことが多いです。
 一方で読者ターゲットも絞られているので、ニッチなものや業界特化のものが多くなります。自分に合ったメディアを見つけられると良いです。
-（ITmedia は SIer や SES など、大手・老舗中小企業向けの記事、Classmethod はクラウドネイティブな話題が多い印象です）
+（ITmedia は SIer や SES など、大手・老舗中小企業向けの記事、 DevelopersIO はクラウドネイティブな話題が多い印象です）
 
 ## TechFeed などのIT情報キュレーションサービス
-* https://techfeed.io
+* [TechFeed - エンジニアのための技術情報収集＆共有プラットフォーム](https://techfeed.io)
 
 さまざまなメディアの情報を分類したりレーティングしたりしてまとめてくれる、キュレーションサービスです。
 カテゴリなどで自分に合った情報を絞り込めますし、複数メディアのハブとなるので、情報量は多く鮮度も高いですね。
 ここから自分に合うメディアや発信者を発掘することもできます。
 
 ## IT系 Podcast
-* http://Rebuild.fm
-* http://Fukabori.fm
-* https://www.tsujileaks.com
+* [Rebuild - Podcast by Tatsuhiko Miyagawa](http://Rebuild.fm)
+* [fukabori.fm](http://Fukabori.fm)
+* [podcast - #セキュリティのアレ](https://www.tsujileaks.com)
 
 Podcastは個人や組織が発信できる音声メディアです。音声版のYouTubeですね。
 なのでテーマや更新頻度、質はチャンネルによって異なります。
@@ -57,4 +57,4 @@ SNSも新鮮な話題やトレンドをキャッチするために活用する�
 ## 最後に
 情報のキャッチアップとしてのおすすめメディアをご紹介しました。
 大切なのは、自分に合ったメディアを選択すること、そして定期的にキャッチアップする仕組みを作ることです。
-例えば月曜日の始業前30分間は週間ランキングやトレンド記事に目を通す。お気に入りのメディアや気になる記事は、RSSフィードや Read It Later に集約して、寝る前に一通り目を通す。など、習慣になるように仕組みを整えると良いと思います。
+例えば月曜日の始業前30分間は週間ランキングやトレンド記事に目を通す。お気に入りのメディアや気になる記事は、[RSSフィード](https://support.microsoft.com/ja-jp/office/rss) や [Read It Later](https://getpocket.com/ja/collections) に集約して、寝る前に一通り目を通す。など、習慣になるように仕組みを整えると良いと思います。
