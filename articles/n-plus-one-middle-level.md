@@ -6,7 +6,7 @@ topics:
   - "Rails"
   - "SQL"
   - "DB"
-published: false
+published: true
 published_at: "2024-02-24 18:30"
 publication_name: "irsc"
 ---
