@@ -5,6 +5,7 @@ type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["SRE", "SLI", "SLO", "observability"]
 published: false
 published_at: "2024-05-10 19:00"
+publication_name: "irsc"
 ---
 ## はじめに
 私は最近SREに興味を持ち始め、いろいろと調べ始めたエンジニアで、実務でSREを取り扱っているわけではありません。
