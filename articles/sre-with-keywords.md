@@ -4,7 +4,6 @@ emoji: "🔍"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["SRE", "SLI", "SLO", "observability"]
 published: false
-published_at: "2024-05-10 19:00"
 publication_name: "irsc"
 ---
 ## はじめに
