@@ -3,7 +3,8 @@ title: "キーワードでざっくり理解するSRE"
 emoji: "🔍"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["SRE", "SLI", "SLO", "observability"]
-published: false
+published: true
+published_at: "2024-05-09 18:00"
 publication_name: "irsc"
 ---
 ## はじめに
