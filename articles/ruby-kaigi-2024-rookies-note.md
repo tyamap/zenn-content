@@ -2,7 +2,7 @@
 title: "RubyKaigi 2024 初参加の記録"
 emoji: "💎"
 type: "tech"
-topics: []
+topics: ['ruby', 'rubykaigi', 'rubykaigi2024', 'rails']
 published: false
 ---
 
@@ -52,9 +52,9 @@ https://github.com/tompng/selftrick2024
 - 言ってることはわかる（？）けどやってることがすごすぎる……
 
 ## キーワード
-- [[RubyKaigi2024 Keywords#DSL]]
-- [[RubyKaigi2024 Keywords#Quine]]
-- [[RubyKaigi2024 Keywords#TRICK]]
+- ./#DSL
+- ./#Quine
+- ./#TRICK
 
 ## 資料
 https://drive.google.com/file/d/1Dkx15u_5UAGoFqJHCeAuj2FXS-z_U7EE/view
@@ -87,7 +87,9 @@ Predicater テストの性質
 - #Ractor
 ## 資料
 https://speakerdeck.com/ohbarye/unlocking-potential-of-property-based-testing-with-ractor
+
 https://x.com/ohbarye/status/1790618995172979025
+
 # Long journey of Ruby standard library
 https://rubykaigi.org/2024/presentations/hsbt.html#day1
 ## Ruby Standard Library
@@ -125,11 +127,13 @@ https://github.com/ruby/ruby/blob/master/tool/sync_default_gems.rb
 - すごく骨が折れそうな作業。少しでも何か貢献できるといいな……
 - 警告機能を活用して、OSSライブラリに Issue や PR 出したい
 ## キーワード
-- [[RubyKaigi2024 Keywords#Ruby Standard Library]]
-- [[RubyKaigi2024 Keywords#C拡張]]
+- ./#Ruby Standard Library
+- ./#C拡張
 ## 資料
 https://speakerdeck.com/andpad/long-journey-of-ruby-standard-library-rubykaigi-2024
-@[tweet](https://x.com/hsbt/status/1790936604108111900)
+
+https://x.com/hsbt/status/1790936604108111900
+
 # Namespace, What and Why
 https://rubykaigi.org/2024/presentations/tagomoris.html#day1
 app/libを隔離する仕組み
@@ -158,11 +162,13 @@ TODO: 理解して補足する
 - 他のパッケージシステムはどうなってるかな
 - この辺りから、スライドの内容に頭が追いついていない……
 ## キーワード
-- [[RubyKaigi2024 Keywords#名前空間]]
-- [[RubyKaigi2024 Keywords#ライブラリとパッケージシステム]]
+- ./#名前空間
+- ./#ライブラリとパッケージシステム
 ## 資料
 https://speakerdeck.com/tagomoris/namespace-what-and-why
-@[tweet](https://x.com/tagomoris/status/1790914708696170986)
+
+https://x.com/tagomoris/status/1790914708696170986
+
 
 # Exploring Reline: Enhancing Command Line Usability
 https://rubykaigi.org/2024/presentations/ima1zumi.html#day1
@@ -194,12 +200,14 @@ https://github.com/ruby/reline/pull/701
 - 自分が使っているツールの話を聞けて、やっと緊張が解ける
 - 自分も頑張りたいなとコントリビューションのモチベが湧いた
 ## キーワード
-- [[RubyKaigi2024 Keywords#IRB]]
-- [[RubyKaigi2024 Keywords#Reline]]
-- [[RubyKaigi2024 Keywords#Readline]]
+- ./#IRB
+- ./#Reline
+- ./#Readline
 ## 資料
 https://speakerdeck.com/ima1zumi/exploring-reline-enhancing-command-line-usability
-@[tweet](https://x.com/ima1zumi/status/1790650187108765911)
+
+https://x.com/ima1zumi/status/1790650187108765911
+
 # Refactoring with ASTs and Pattern Matching
 https://rubykaigi.org/2024/presentations/keystonelemur.html#day1
 ## AST
@@ -226,9 +234,9 @@ ASTとパターンマッチングを用いてこんなことができるよ〜
 - ASTとか初めて聞いた。文系ファジーエンジニアには難しい……勉強しよ
 - このあと、いろんなセッションで Parser の話を聞くことになる、その布石
 ## キーワード
-- [[RubyKaigi2024 Keywords#AST]]
-- [[RubyKaigi2024 Keywords#Parser]]
-- [[RubyKaigi2024 Keywords#PatternMatching]]
+- ./#AST
+- ./#Parser
+- ./#PatternMatching
 ## 資料
 https://github.com/baweaver/kaigi24_refactoring_talk
 ---
@@ -276,8 +284,8 @@ https://github.com/socketry/lively
 - Falcon 使ってみたい
 
 ## キーワード
-- [[RubyKaigi2024 Keywords#async]]
-- [[RubyKaigi2024 Keywords#ActionCable]]
+- ./#async
+- ./#ActionCable
 ## 資料
 TODO: 探す
 
@@ -303,11 +311,13 @@ https://yui-knk.hatenablog.com/entry/2023/12/06/082203
 - この後も Lrama based Parser の話を何度も耳にすることになる
 - Parser を扱っている人たちの熱量と凄さを知った
 ## キーワード
-- [[RubyKaigi2024 Keywords#parse.y]]
-- [[RubyKaigi2024 Keywords#Lrama]]
+- ./#parse.y
+- ./#Lrama
 ## 資料
 https://speakerdeck.com/ydah/does-ruby-parser-dream-of-highly-expressive-grammar
-@[tweet](https://x.com/ydah_/status/1791032088462041297)
+
+https://x.com/ydah_/status/1791032088462041297
+
 
 # RubyGems on ruby.wasm
 https://rubykaigi.org/2024/presentations/kateinoigakukun.html#day2
@@ -337,9 +347,9 @@ DynamicLinking
 - でも完全サーバレスなマストドンが動いてるすごい
 - ローコストでポータブルなステージング環境を作れるということ？
 ## キーワード
-- [[RubyKaigi2024 Keywords#wasm]]
-- [[RubyKaigi2024 Keywords#require]]
-- [[RubyKaigi2024 Keywords#pre-installation]]
+- ./#wasm
+- ./#require
+- ./#pre-installation
 ## 資料
 https://speakerdeck.com/kateinoigakukun/rubygems-on-ruby-dot-wasm
 
@@ -366,8 +376,8 @@ PicoRubyではこちらを採用したい
 - リファクタリングやパフォーマンス改良のステップがわかった
 - Picoruby も触ってみたい
 ## キーワード
-- [[RubyKaigi2024 Keywords#Prism parser]]
-- [[RubyKaigi2024 Keywords#Picoruby]]
+- ./#Prism parser
+- ./#Picoruby
 ## 資料
 https://slide.rabbit-shocker.org/authors/hasumikin/RubyKaigi2024/UnlockTheUniversalParsers.pdf
 
@@ -397,9 +407,9 @@ YJIIT3.4
 - この後もYJITのセッションを何度か聴講
 - 早くruby3系にあげて、パフォーマンス計測したい
 ## キーワード
-- [[RubyKaigi2024 Keywords#JIT]]
-- [[RubyKaigi2024 Keywords#MJIT]]
-- [[RubyKaigi2024 Keywords#YJIT]]
+- ./#JIT
+- ./#MJIT
+- ./#YJIT
 ## 資料
 https://www.slideshare.net/slideshow/breaking-the-ruby-performance-barrier-with-yjit/269367259
 
@@ -431,8 +441,8 @@ https://rubykaigi.org/2024/presentations/mametter.html#day2
 - Ruby の型システムも全然追いついていないから、勉強せねば
 - とにかくruby3系にあげたい欲と、取り残されてる焦り
 ## キーワード
-- [[RubyKaigi2024 Keywords#RBS]]
-- [[RubyKaigi2024 Keywords#TypeProf]]
+- ./#RBS
+- ./#TypeProf
 ## 資料
 https://speakerdeck.com/mame/good-first-issues-of-typeprof
 
@@ -453,8 +463,8 @@ Ruby supports Unicode "Name" Property
 - 文系だからとか逃げずに、コンピュータサイエンスの基礎だけでも勉強したい
 - アルゴリズムやデータ構造はしっかり身につけよう
 ## キーワード
-- [[RubyKaigi2024 Keywords#Ruby と 正規表現]]
-- [[RubyKaigi2024 Keywords#Name property]]
+- ./#Ruby と 正規表現
+- ./#Name property
 ## 資料
 TODO: 探す
 # Lightning Talks
@@ -609,9 +619,9 @@ async の間 RubyGem 以外全て止まっているという構造は都合が�
     - ビルドシステムとかLockとか
 - Rubiest コミュニティの良さが詰まってる Keynote でした
 ## キーワード
-- [[RubyKaigi2024 Keywords#frozen string]]
-- [[RubyKaigi2024 Keywords#GNU Autotool]]
-- [[RubyKaigi2024 Keywords#GVL]]
+- ./#frozen string
+- ./#GNU Autotool
+- ./#GVL
 # YJIT Makes Rails 1.7x Faster
 YJIT Makes Rails ~~1.7x~~ 1.8x Faster
 https://rubykaigi.org/2024/presentations/k0kubun.html#day3
@@ -636,8 +646,8 @@ Rails7.2~ Ruby3.3~ でデフォルトに
 - Ruby と Rails のバージョンあげたい
 - メモリとレジスタの話とか、勉強しよ
 ## キーワード
-- [[RubyKaigi2024 Keywords#YJIT]]
-- [[RubyKaigi2024 Keywords#メモリとレジスタ]]
+- ./#YJIT
+- ./#メモリとレジスタ
 ## 資料
 https://speakerdeck.com/k0kubun/rubykaigi-2024
 
@@ -676,9 +686,9 @@ Ruby3.4はもっと早いよ
 - データ構造を学ぼう
 - パフォーマンスの話が続いている
 ## キーワード
-- [[RubyKaigi2024 Keywords#インスタンス変数]]
-- [[RubyKaigi2024 Keywords#赤黒木]]
-- [[RubyKaigi2024 Keywords#Object Shape]]
+- ./#インスタンス変数
+- ./#赤黒木
+- ./#Object Shape
 ## 資料
 TODO: 探す
 
@@ -705,12 +715,14 @@ Proc問題
 - まだまだ進化していくんだな
 - gemの歴史に興味を持った
 ## キーワード
-- [[RubyKaigi2024 Keywords#CGI]]
-- [[RubyKaigi2024 Keywords#ERB]]
-- [[RubyKaigi2024 Keywords#Proc in ERB]]
+- ./#CGI
+- ./#ERB
+- ./#Proc in ERB
 ## 資料
 https://speakerdeck.com/m_seki/erb-ancient-and-future
+
 https://x.com/m_seki/status/1791779124014670056
+
 # Finding and fixing memory safety bugs in C with ASAN
 https://rubykaigi.org/2024/presentations/KJTsanaktsidis.html#day3
 
@@ -733,7 +745,7 @@ https://bugs.ruby-lang.org/issues/20387
 - 英語のセッションは理解度がガクンと落ちる
     - 次回はリアルタイム翻訳の仕組みを整えていこう
 ## キーワード
-- [[RubyKaigi2024 Keywords#ASAN]]
+- ./#ASAN
 ## 資料
 TODO: 探す
 
@@ -768,7 +780,7 @@ https://github.com/ledsun/orbital_ring
 - フロントエンドフレームワーク作れちゃうのすごい
 - Orbital Ring かっこいい……
 ## キーワード
-- [[RubyKaigi2024 Keywords#wasm]]
+- ./#wasm
 ## 資料
 https://speakerdeck.com/ledsun/using-ruby-in-the-browser-is-wonderful
 
@@ -877,8 +889,10 @@ AOT Compiler
 - Rubyのパフォーマンスの重要性と今後を強調。実際たくさんのセッションを通してパフォーマンスの成長を感じていたので、非常に納得感がある
 - Rubyの歴史を知れて面白かった
 - 実際Rubyは書いていて楽しいし、だからこそこんなにもたくさんの人・コミュニティに愛されている
-- Rubyist であることを自負できるように、もっともっと成長したい！
-# 全体を通しての感想
+- Ruby のコミュニティに貢献できるように、もっともっと成長したい！
+
+---
+# RubyKaigi 全体を通しての感想
 - 最初は知識不足を痛感し、疎外感を感じていた
     - 単身で初の参加というのもあり、孤独感
     - 実際業務で使っているRuby環境は、非常に遅れをとってしまっている
@@ -886,5 +900,106 @@ AOT Compiler
 - ここで得た知識をもとに、社内の環境を整えていきたい
 - 素晴らしい言語とそれを支えるコミュニティ、 Rubyist の一人であることを自負できるように、もっともっと成長したい
 - とにかくまずはテストを書いて、アップデートのための地盤を固めよう
+- 来年もぜひ参加したい！
+---
 
-TODO:
+# キーワード
+## MRI ruby
+Matz Ruby Interpreter
+CRuby いわゆる普通の Ruby
+## Ruby の種類
+- jruby
+  - Java実装
+- mruby
+- picoruby
+
+などなど
+## DSL
+Domain Specifitic Language
+あるドメイン（タスク）をうまく記述することに集中した言語や実装。メタプログラミング。
+外部DSLと内部DSL。Rubyは内部DSLの実装に長けている。Rails や Rspec がその代表。
+https://ja.wikipedia.org/wiki/%E3%83%89%E3%83%A1%E3%82%A4%E3%83%B3%E5%9B%BA%E6%9C%89%E8%A8%80%E8%AA%9E
+## Quine
+実行すると自身と同じ文字列を出力するコード。百聞は一見にしかず。
+https://ja.m.wikipedia.org/wiki/%E3%82%AF%E3%83%AF%E3%82%A4%E3%83%B3_(%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0)
+https://github.com/tric/trick2022/blob/master/01-tompng/entry.rb
+## TRICK
+Transcendental Ruby Imbroglio Contest for rubyKaigi
+超絶技巧なRubyコードを書いて競い合うコンテスト。
+https://github.com/tric/trick2022
+## PBT
+PropertyBasedTesting
+ランダムな値でテストを行う。
+- Generator
+- Property
+- Shrinking
+失敗したケースに対してShrinkしてバグが再現する最小構成を特定する
+←→ ExampleBasedTesting
+https://tech.findy.co.jp/entry/2024/05/20/164206
+## Ractor
+並列処理を実現するためのインターフェース
+CPUの処理能力を超えて実行する
+https://atdot.net/~ko1/activities/2023_rubykaigi2023.pdf
+## Ruby Standard Library
+Ruby の標準ライブラリ。
+https://docs.ruby-lang.org/en/master/standard_library_rdoc.html
+## C拡張
+Rubyの拡張ライブラリ。
+C 言語で書かれたコードを Ruby のコードと統合して、高速な処理や低レベルのアクセスを実現できる
+https://docs.ruby-lang.org/en/master/extension_ja_rdoc.html
+## 名前空間
+各要素に一意の名前をつけて識別できるようにした範囲。Ruby では `::` で区分する。
+例えば拡張ライブラリが他のライブラリのシンボルを使用している場合、名前が衝突する。
+https://tagomoris.hatenablog.com/entry/2023/05/15/174652
+## ライブラリとパッケージシステム
+gem が Ruby ライブラリ。ライブラリ ≒ パッケージ。
+Ruby におけるパッケージ管理システムが Rubygems。
+Bundler はプロジェクトごとに gem を管理する gem。Gemfile や Gemfile.lock の記述。
+https://qiita.com/3no3_tw/items/8c1e3e95c75edae1036d
+## IRB
+Interactive Ruby
+対話的に Ruby を実行するシェル。
+Ruby 環境の `irb` コマンドや、Rails の `rails console` コマンドで起動する
+## Reline
+IRBにおける、CLIでのテキスト入力のためのライブラリ
+CLIでのテキストの読み込みや編集、履歴などを管理する
+Ruby2.7にバンドルされた
+## Readline
+UNIX系システムで使用される、CLIでのテキスト入力のためのライブラリ
+C依存なので、Relineに置き換える取り組みが進められている
+Ruby3.3からサポートを削除する
+## AST
+## DFS
+## Parser
+## PatternMatching
+## async
+## ActionCable
+## parse.y
+## Lrama
+## wasm
+## require
+## pre-installation
+## Prism parser
+## Picoruby
+## JIT
+## YJIT
+## RBS
+## TypeProf
+## Ruby と 正規表現
+## StringScanner
+## Name property
+## frozen string
+## GNU Autotool
+## GVL
+## メモリとレジスタ
+## インスタンス変数
+## 赤黒木
+## Object Shape
+## Profiler
+## GC
+ガベージコレクションのこと
+[module GC (Ruby 3.3 リファレンスマニュアル)](https://docs.ruby-lang.org/ja/latest/class/GC.html)
+## CGI
+## ERB
+## Proc in ERB
+## ASAN
