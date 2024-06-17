@@ -240,7 +240,8 @@ ASTとパターンマッチングを用いてこんなことができるよ〜
 - ./#PatternMatching
 ### 資料
 https://github.com/baweaver/kaigi24_refactoring_talk
----
+
+# 2日目
 ## Leveraging Falcon and Rails for Real-Time Interactivity
 https://rubykaigi.org/2024/presentations/ioquatix.html#day2
 
@@ -542,7 +543,7 @@ CODESPEAK free reading
 - 二日目も終わり、楽しいけど疲労感を感じる……
 - イベントもあるけれど、今日は一人で美味しい沖縄料理食べて、ゆっくり休もう……
 
----
+# 3日目
 ## Ruby Committers and the World
 https://rubykaigi.org/2024/presentations/rubylangorg.html#day3
 Ruby3.4.0 リリース
@@ -566,21 +567,21 @@ Matz「私は型を書きたくない。でもコメントで書く分には許�
 
 ①
 ```
-## @sig siza: Integer
+# @sig siza: Integer
 ```
 vs
 ```
-## @rbs size: Integer
+# @rbs size: Integer
 ```
 
 ②
 ```
-## @rbs returns void
+# @rbs returns void
 @ rbs yields (String) -> void
 ```
 vs
 ```
-## @rbs return: void
+# @rbs return: void
 @ @rbs &: (String) -> void
 ```
 
