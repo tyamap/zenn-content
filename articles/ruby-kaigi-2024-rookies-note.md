@@ -34,7 +34,7 @@ Keynote以外のセッションは短く、前提となる話は省略されま�
 ---
 # 1日目
 ## Writing Weird Code
-[Writing Weird Code - RubyKaigi 2024](https://rubykaigi.org/2024/presentations/tompng.html#day1)
+https://rubykaigi.org/2024/presentations/tompng.html#day1
 
 1日目の Keynote
 短くてトリッキーなコードの紹介
@@ -351,7 +351,6 @@ DynamicLinking
 ### キーワード
 - ./#wasm
 - ./#require
-- ./#pre-installation
 ### 資料
 https://speakerdeck.com/kateinoigakukun/rubygems-on-ruby-dot-wasm
 
@@ -465,7 +464,6 @@ Ruby supports Unicode "Name" Property
 - 文系だからとか逃げずに、コンピュータサイエンスの基礎だけでも勉強したい
 - アルゴリズムやデータ構造はしっかり身につけよう
 ### キーワード
-- ./#Ruby と 正規表現
 - ./#Name property
 ### 資料
 TODO: 探す
@@ -622,7 +620,7 @@ async の間 RubyGem 以外全て止まっているという構造は都合が�
 - Rubiest コミュニティの良さが詰まってる Keynote でした
 ### キーワード
 - ./#frozen string
-- ./#GNU Autotool
+- ./#GNU Autotools
 - ./#GVL
 ## YJIT Makes Rails 1.7x Faster
 YJIT Makes Rails ~~1.7x~~ 1.8x Faster
@@ -717,7 +715,6 @@ Proc問題
 ### キーワード
 - ./#CGI
 - ./#ERB
-- ./#Proc in ERB
 ### 資料
 https://speakerdeck.com/m_seki/erb-ancient-and-future
 
@@ -904,10 +901,14 @@ AOT Compiler
 ---
 
 # キーワード
-## MRI ruby
+今回の RubyKaigi で出会った言葉たちとその周辺情報を自分なりに整理しました。
+不明点や間違っている点等あればコメントください。
+## MRI
 Matz Ruby Interpreter
 CRuby いわゆる普通の Ruby
 ## Ruby の種類
+- cruby
+  - これが MRI, 普通のruby
 - jruby
   - Java実装
 - mruby
@@ -960,45 +961,150 @@ https://qiita.com/3no3_tw/items/8c1e3e95c75edae1036d
 Interactive Ruby
 対話的に Ruby を実行するシェル。
 Ruby 環境の `irb` コマンドや、Rails の `rails console` コマンドで起動する
+https://github.com/ruby/irb
 ## Reline
 IRBにおける、CLIでのテキスト入力のためのライブラリ
 CLIでのテキストの読み込みや編集、履歴などを管理する
 Ruby2.7にバンドルされた
+https://github.com/ruby/reline
 ## Readline
 UNIX系システムで使用される、CLIでのテキスト入力のためのライブラリ
 C依存なので、Relineに置き換える取り組みが進められている
-Ruby3.3からサポートを削除する
+Ruby3.3からサポートを解除する
 ## AST
+抽象構文木 (Abstract Syntax Tree)
+Rubyコードの構文構造を表すデータ構造。
+コードを構成要素に分解し、プログラム上での解析や操作を容易にするために使用される。
+Rubyの内部動作の基本的な部分であり、コードの詳細な分析と操作を可能にする。
+https://zenn.dev/qnighy/articles/cc67193321b5e6#%E3%82%B3%E3%83%A1%E3%83%B3%E3%83%88
 ## DFS
+深さ優先探索 (Depth-First Search)
+グラフや木構造の探索アルゴリズムの一つで、開始ノードから出発し、可能な限り深く探索を進める方法。
+探索対象の構造や目的に応じて、効率的な探索を実現するためのアルゴリズム。
+https://zenn.dev/convers39/articles/1c315cd96a991f
 ## Parser
+ソースコードを解析してASTを生成するツール。
+Parser によりコードの構文的な構造を理解し、コンパイルや実行のために用いる
 ## PatternMatching
+Ruby 2.7から実験的に導入された機能で、関数型言語で広く使われている技術。
+渡されたオブジェクトの構造が特定のパターンと一致するかどうかを調べ、一致した場合にその値を変数に代入することなどができるようになる。
+https://developer.feedforce.jp/entry/2019/05/17/110000
 ## async
+Async（非同期）処理。
+特に時間のかかる操作を行う際に、他の処理をブロックせずに実行するためのもの。
+非同期処理を実現するために Thread や async gem を使うなどの方法がある。
+https://hellooooooo.hatenablog.com/entry/2019/12/24/090043
 ## ActionCable
+Ruby on Railsにおけるリアルタイム通信を実現するためのフレームワーク。
+Rails 5から導入され、WebSocketを利用してクライアントとサーバー間の非同期通信を可能にする。
+チャットアプリケーションやリアルタイム通知システムなど、リアルタイム性が求められる機能をRailsアプリケーションに実装できる。
+https://ai.rails-guide.com/jp/action_cable_overview.html
 ## parse.y
+Ruby言語の構文解析メカニズムの基盤となるコンポーネント。
+Rubyコードがどのように解釈され、実行可能な形式に変換されるかを定義している。
 ## Lrama
+LALR（Look-Ahead LR）パーサージェネレータ。
+パーサーには手書きパーサーと、パーサージェネレータによるパーサーの2種類ある。
+手書きパーサーはC言語やRubyで実装され、パーサージェネレータはBNF（Backus-Naur Form）などの形式文法を基に自動生成される。Lramaベースのパーサーは後者の例
+https://gihyo.jp/article/2024/01/ruby3.3-lrama
 ## wasm
+WebAssembly
+ウェブブラウザ上でJavaScript以外の言語を動作させるための技術。
+ruby.wasm は、RubyコードをWasmモジュールにコンパイルするプロジェクト。
+https://techracho.bpsinc.jp/hachi8833/2024_03_25/139952
 ## require
-## pre-installation
+`require` はRubyの標準ライブラリや外部ライブラリを読み込むためのメソッド。
+インラインキャッシュとポリモーフィズムがパフォーマンスやメモリ効率に影響を与えることがある。
+https://techracho.bpsinc.jp/hachi8833/2024_03_04/139605
 ## Prism parser
+旧YARP (Yet Another Ruby Parser) 2023年に Prism に命名変更。
+Ruby 3.3.0で導入された新しいパーサーで、エラートレラント性（構文エラーが発生しても例外を発生させず、可能な限り意味のある結果を返す）を特徴としている
+https://techracho.bpsinc.jp/hachi8833/2023_07_10/131808
 ## Picoruby
+軽量Rubyの実装で、特に組み込みシステムでの利用を目的としている
+https://github.com/picoruby/picoruby
 ## JIT
+JITコンパイラ（Just-In-Timeコンパイラ）は、ソフトウェアの実行時にコードをコンパイルする技術。実行時コンパイラ。
+ソースコードを一行ずつ逐次的に翻訳しながら実行する「インタプリタ方式」と異なり、実行時に中間コード（バイトコード）をネイティブなマシンコードにコンパイルする。
+その最適化により、高速な動作が可能になる。
+https://docs.oracle.com/cd/F25597_01/document/products/jrockit/geninfo/diagnos/underst_jit.html
 ## YJIT
+Shopifyが開発したJITコンパイラで、Ruby 3.2で実用段階に入った。
+「Lazy Basic Block Versioning」という型チェック手法を採用し、必要最小限のコンパイルを行うことで高速化を実現。
+メモリ内にマシンコードを生成し、プログラムの動作統計情報を保存するため、メモリ使用量が増加する。
+https://gihyo.jp/article/2024/01/ruby3.3-jit
 ## RBS
+RBS (Ruby Signature)
+Ruby 3.0で導入された公式の型定義言語。
+RBSファイルは、Rubyコードの型情報を定義するために使用され、Rubyスクリプト本体には型情報を直接書かない。
+https://github.com/ruby/rbs
 ## TypeProf
-## Ruby と 正規表現
+Rubyコードの型を推論するためのツール。
+型注釈のないRubyコードを解析し、型情報を推定してRBSファイルを生成する。
+https://github.com/ruby/typeprof
 ## StringScanner
+文字列をスキャンしてパターンにマッチする部分を逐次的に処理するためのクラス。
+正規表現は文字列全体に対して一度にパターンマッチングや置換を行いたい場合に適している。テキスト全体の特定のパターンを一括で置換する場合など。
+StringScanner は文字列を逐次的に処理したい場合に適している。ログファイルの解析や、文字列をトークンに分割して逐次処理する場合など。
+https://docs.ruby-lang.org/ja/latest/class/StringScanner.html
 ## Name property
+Rubyの正規表現では、Unicodeプロパティを使用して特定の文字クラスを指定することができる。
+NameはUnicodeプロパティの一つで、特定の名前を持つ文字にマッチさせるために使用する。
+`\p{property-name}` という形式で記述する。例えばカタカナ文字にマッチさせる場合は、 `\p{Katakana}`
+https://docs.ruby-lang.org/ja/latest/doc/spec=2fregexp.html
 ## frozen string
-## GNU Autotool
+`frozen_string_literal: true` というマジックコメントで、文字列リテラルを最初からイミュータブル（変更不可）な状態で生成されるようになる。
+Ruby3.4 では、マジックコメントがなくてもリテラル文字列オブジェクトが変更された場合に警告が出るようになる。
+文字列をイミュータブルにすることで、同一リテラルがコード中に複数回現れた場合に、同一オブジェクトとして扱われるため、メモリ使用量が削減される傾向がある。
+https://qiita.com/universato/items/1dd8943df07f2445655e
+## GNU Autotools
+ソフトウェアのビルドシステムを自動化するためのツール群。異なるシステム上でソフトウェアをビルドする際に必要な設定やスクリプトを生成するために使用される。
+Rubyプロジェクトを含む多くのプロジェクトで、ビルドプロセスを自動化し、異なる環境でのビルドを容易にするために使用されている。
+一部の Rubyist は、GNU Autotools から CMake などの他のビルドシステムに移行することを検討している模様。
+https://www.clear-code.com/blog/2016/10/13.html
 ## GVL
+GVL（Global VM Lock）は、Rubyのマルチスレッドプログラミングにおいて重要な役割を果たす機構。
+あるスレッドが Ruby コードを実行する際に他のスレッドが同時に実行されないようにするためのロック機構として、複数のスレッドが同時にオブジェクトやVM構造を改変することを防ぎ、VMの正しさを保証する。
+I/O待ちや特定のシステムコール（例えば、ファイル操作やネットワーク通信）を行う場合、GVLは一時的に解放され、他のスレッドが実行されることが可能になる。
+Ruby のマルチスレッドプログラミングにおいて重要な役割を果たす一方で、パフォーマンスやスケーリングにおいては課題も存在する模様。
+https://docs.ruby-lang.org/ja/latest/doc/spec=2fthread.html
 ## インスタンス変数
+インスタンス変数を使用すると、変数のスコープが不必要に大きくなり、メモリ管理が複雑になる傾向にある。
+Ruby 3.2では、オブジェクトシェイプ（object Shape）の導入により、インスタンス変数のアクセスが効率化されたが、メモ化のイディオムを使用すると、同じクラスのインスタンスが異なるシェイプを持つことが増え、インラインキャッシュのヒット率が下がることがある。
+基本的にはローカル変数でやり取りするのがベター。
+https://qiita.com/jnchito/items/4d62693525f5023013cc
+https://techracho.bpsinc.jp/hachi8833/2024_03_04/139605
 ## 赤黒木
+Red-Black Tree
+バランス二分木の一種で、各ノードが「赤」または「黒」の色を持ち、特定の条件を満たすように設計されている。
+これにより、挿入、削除、検索などの操作が最悪でも `O(log n)` の時間で行えるようになっている。
+https://qiita.com/kgoto/items/b15b9a494deae010d660
 ## Object Shape
+Ruby3.2でマージされた、Rubyのオブジェクトのパフォーマンスを向上させるための概念。
+オブジェクトの形状（shape）を事前に定義し、その形状に基づいてインスタンス変数のアクセスを最適化する。
+https://techracho.bpsinc.jp/hachi8833/2021_09_27/111656
 ## Profiler
+プログラムの実行時にパフォーマンス情報を収集し、実行速度やリソース使用量を最適化するためのツール
+ruby-prof、stackprof などの gem が主要。
+https://ai-techblog.hatenablog.com/entry/ruby-profiler
 ## GC
-ガベージコレクションのこと
-[module GC (Ruby 3.3 リファレンスマニュアル)](https://docs.ruby-lang.org/ja/latest/class/GC.html)
+ガベージコレクション。メモリ管理のために不要なオブジェクトを自動的に解放する仕組み。
+RubyのGCは主に「Mark & Sweep」アルゴリズムを使用している。シンプルだが、全てのオブジェクトをスキャンするため、他の処理が一時的に停止する「Stop the World」現象が発生する
+https://qiita.com/kamina_zzz/items/0540f663832e07ee1b10
+https://docs.ruby-lang.org/ja/latest/class/GC.html
 ## CGI
+Common Gateway Interface. Webサーバと連携してプログラムを動作させる仕組み。
+Ruby では`cgi` ライブラリを用いて実装できる。
+https://docs.ruby-lang.org/ja/latest/library/cgi.html
 ## ERB
-## Proc in ERB
+Embedded Ruby
+Rubyの標準ライブラリの一部として提供されているeRubyの実装の一つ。
+eRubyは、Mayz の構想と ePerl の実装を基にした議論から、関将俊によって開発されました。
+Ruby1.8以降で、Ruby処理系の標準ライブラリとなった。
+https://ja.wikipedia.org/wiki/ERuby
+https://zenn.dev/manimoto/articles/d429600d008f7b
 ## ASAN
+AddressSanitizer. Googleが開発したメモリエラー検出ツール。
+主にC/C++プログラムのバグを検出するために使用される
+RubyやGemのビルド時にASANを使用して無効なメモリアクセスを検出することができる
+https://github.com/google/sanitizers/wiki/AddressSanitizer
