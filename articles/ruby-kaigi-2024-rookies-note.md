@@ -3,7 +3,9 @@ title: "RubyKaigi 2024 初参加の記録"
 emoji: "💎"
 type: "tech"
 topics: ['ruby', 'rubykaigi', 'rubykaigi2024', 'rails']
-published: false
+published: true
+published_at: "2024-06-19 18:00"
+publication_name: "irsc"
 ---
 
 # はじめに
