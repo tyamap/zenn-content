@@ -56,9 +56,9 @@ https://github.com/tompng/selftrick2024
 - 言ってることはわかる（？）けどやってることがすごすぎる……
 
 ### キーワード
-- [DSL](https://zenn.dev/articles/ruby-kaigi-2024-rookies-note/#dsl)
-- [Quine](https://zenn.dev/articles/ruby-kaigi-2024-rookies-note/#quine)
-- [TRICK](https://zenn.dev/articles/ruby-kaigi-2024-rookies-note/#trick)
+- [DSL](https://zenn.dev/irsc/articles/ruby-kaigi-2024-rookies-note/#dsl)
+- [Quine](https://zenn.dev/irsc/articles/ruby-kaigi-2024-rookies-note/#quine)
+- [TRICK](https://zenn.dev/irsc/articles/ruby-kaigi-2024-rookies-note/#trick)
 
 ### 資料
 https://drive.google.com/file/d/1Dkx15u_5UAGoFqJHCeAuj2FXS-z_U7EE/view
@@ -87,8 +87,8 @@ Predicater テストの性質
 - Ractor を使いこなすのは難しそう
 - TODO: 結局 Ractor では効果が出なかった原因は何にあるのだろう（聞き逃している）
 ### キーワード
-- [PBT](https://zenn.dev/articles/ruby-kaigi-2024-rookies-note/#pbt)
-- [Ractor](https://zenn.dev/articles/ruby-kaigi-2024-rookies-note/#ractor)
+- [PBT](https://zenn.dev/irsc/articles/ruby-kaigi-2024-rookies-note/#pbt)
+- [Ractor](https://zenn.dev/irsc/articles/ruby-kaigi-2024-rookies-note/#ractor)
 ### 資料
 https://speakerdeck.com/ohbarye/unlocking-potential-of-property-based-testing-with-ractor
 
@@ -131,8 +131,8 @@ https://github.com/ruby/ruby/blob/master/tool/sync_default_gems.rb
 - すごく骨が折れそうな作業。少しでも何か貢献できるといいな……
 - 警告機能を活用して、OSSライブラリに Issue や PR 出したい
 ### キーワード
-- [Ruby Standard Library](https://zenn.dev/articles/ruby-kaigi-2024-rookies-note/#ruby-standard-library-1)
-- [C拡張](https://zenn.dev/articles/ruby-kaigi-2024-rookies-note/#c%E6%8B%A1%E5%BC%B5)
+- [Ruby Standard Library](https://zenn.dev/irsc/articles/ruby-kaigi-2024-rookies-note/#ruby-standard-library-1)
+- [C拡張](https://zenn.dev/irsc/articles/ruby-kaigi-2024-rookies-note/#c%E6%8B%A1%E5%BC%B5)
 ### 資料
 https://speakerdeck.com/andpad/long-journey-of-ruby-standard-library-rubykaigi-2024
 
@@ -166,8 +166,8 @@ TODO: 理解して補足する
 - 他のパッケージシステムはどうなってるかな
 - この辺りから、スライドの内容に頭が追いついていない……
 ### キーワード
-- [名前空間](https://zenn.dev/articles/ruby-kaigi-2024-rookies-note/#%E5%90%8D%E5%89%8D%E7%A9%BA%E9%96%93)
-- [ライブラリとパッケージシステム](https://zenn.dev/articles/ruby-kaigi-2024-rookies-note/#%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E3%81%A8%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0)
+- [名前空間](https://zenn.dev/irsc/articles/ruby-kaigi-2024-rookies-note/#%E5%90%8D%E5%89%8D%E7%A9%BA%E9%96%93)
+- [ライブラリとパッケージシステム](https://zenn.dev/irsc/articles/ruby-kaigi-2024-rookies-note/#%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E3%81%A8%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0)
 ### 資料
 https://speakerdeck.com/tagomoris/namespace-what-and-why
 
@@ -204,9 +204,9 @@ https://github.com/ruby/reline/pull/701
 - 自分が使っているツールの話を聞けて、やっと緊張が解ける
 - 自分も頑張りたいなとコントリビューションのモチベが湧いた
 ### キーワード
-- [IRB](https://zenn.dev/articles/ruby-kaigi-2024-rookies-note/#irb)
-- [Reline](https://zenn.dev/articles/ruby-kaigi-2024-rookies-note/#reline-1)
-- [Readline](https://zenn.dev/articles/ruby-kaigi-2024-rookies-note/#readline)
+- [IRB](https://zenn.dev/irsc/articles/ruby-kaigi-2024-rookies-note/#irb)
+- [Reline](https://zenn.dev/irsc/articles/ruby-kaigi-2024-rookies-note/#reline-1)
+- [Readline](https://zenn.dev/irsc/articles/ruby-kaigi-2024-rookies-note/#readline)
 ### 資料
 https://speakerdeck.com/ima1zumi/exploring-reline-enhancing-command-line-usability
 
@@ -238,9 +238,9 @@ ASTとパターンマッチングを用いてこんなことができるよ〜
 - ASTとか初めて聞いた。文系ファジーエンジニアには難しい……勉強しよ
 - このあと、いろんなセッションで Parser の話を聞くことになる、その布石
 ### キーワード
-- [AST](https://zenn.dev/articles/ruby-kaigi-2024-rookies-note/#ast-1)
-- [Parser](https://zenn.dev/articles/ruby-kaigi-2024-rookies-note/#parser-1)
-- [PatternMatching](https://zenn.dev/articles/ruby-kaigi-2024-rookies-note/#patternmatching-1)
+- [AST](https://zenn.dev/irsc/articles/ruby-kaigi-2024-rookies-note/#ast-1)
+- [Parser](https://zenn.dev/irsc/articles/ruby-kaigi-2024-rookies-note/#parser-1)
+- [PatternMatching](https://zenn.dev/irsc/articles/ruby-kaigi-2024-rookies-note/#patternmatching-1)
 ### 資料
 https://github.com/baweaver/kaigi24_refactoring_talk
 
@@ -289,8 +289,8 @@ https://github.com/socketry/lively
 - Falcon 使ってみたい
 
 ### キーワード
-- [async](https://zenn.dev/articles/ruby-kaigi-2024-rookies-note/#async)
-- [ActionCable](https://zenn.dev/articles/ruby-kaigi-2024-rookies-note/#actioncable)
+- [async](https://zenn.dev/irsc/articles/ruby-kaigi-2024-rookies-note/#async)
+- [ActionCable](https://zenn.dev/irsc/articles/ruby-kaigi-2024-rookies-note/#actioncable)
 ### 資料
 TODO: 探す
 
@@ -316,8 +316,8 @@ https://yui-knk.hatenablog.com/entry/2023/12/06/082203
 - この後も Lrama based Parser の話を何度も耳にすることになる
 - Parser を扱っている人たちの熱量と凄さを知った
 ### キーワード
-- [parse.y](https://zenn.dev/articles/ruby-kaigi-2024-rookies-note/#parse.y)
-- [Lrama](https://zenn.dev/articles/ruby-kaigi-2024-rookies-note/#lrama-2)
+- [parse.y](https://zenn.dev/irsc/articles/ruby-kaigi-2024-rookies-note/#parse.y)
+- [Lrama](https://zenn.dev/irsc/articles/ruby-kaigi-2024-rookies-note/#lrama-2)
 ### 資料
 https://speakerdeck.com/ydah/does-ruby-parser-dream-of-highly-expressive-grammar
 
@@ -352,8 +352,8 @@ DynamicLinking
 - でも完全サーバレスなマストドンが動いてるすごい
 - ローコストでポータブルなステージング環境を作れるということ？
 ### キーワード
-- [wasm](https://zenn.dev/articles/ruby-kaigi-2024-rookies-note/#wasm)
-- [require](https://zenn.dev/articles/ruby-kaigi-2024-rookies-note/#require)
+- [wasm](https://zenn.dev/irsc/articles/ruby-kaigi-2024-rookies-note/#wasm)
+- [require](https://zenn.dev/irsc/articles/ruby-kaigi-2024-rookies-note/#require)
 ### 資料
 https://speakerdeck.com/kateinoigakukun/rubygems-on-ruby-dot-wasm
 
@@ -380,8 +380,8 @@ PicoRubyではこちらを採用したい
 - リファクタリングやパフォーマンス改良のステップがわかった
 - Picoruby も触ってみたい
 ### キーワード
-- [Prism parser](https://zenn.dev/articles/ruby-kaigi-2024-rookies-note/#prism-parser)
-- [Picoruby](https://zenn.dev/articles/ruby-kaigi-2024-rookies-note/#picoruby-1)
+- [Prism parser](https://zenn.dev/irsc/articles/ruby-kaigi-2024-rookies-note/#prism-parser)
+- [Picoruby](https://zenn.dev/irsc/articles/ruby-kaigi-2024-rookies-note/#picoruby-1)
 ### 資料
 https://slide.rabbit-shocker.org/authors/hasumikin/RubyKaigi2024/UnlockTheUniversalParsers.pdf
 
@@ -411,8 +411,8 @@ YJIIT3.4
 - この後もYJITのセッションを何度か聴講
 - 早くruby3系にあげて、パフォーマンス計測したい
 ### キーワード
-- [JIT](https://zenn.dev/articles/ruby-kaigi-2024-rookies-note/#jit)
-- [YJIT](https://zenn.dev/articles/ruby-kaigi-2024-rookies-note/#yjit-1)
+- [JIT](https://zenn.dev/irsc/articles/ruby-kaigi-2024-rookies-note/#jit)
+- [YJIT](https://zenn.dev/irsc/articles/ruby-kaigi-2024-rookies-note/#yjit-1)
 ### 資料
 https://www.slideshare.net/slideshow/breaking-the-ruby-performance-barrier-with-yjit/269367259
 
@@ -444,8 +444,8 @@ https://rubykaigi.org/2024/presentations/mametter.html#day2
 - Ruby の型システムも全然追いついていないから、勉強せねば
 - とにかくruby3系にあげたい欲と、取り残されてる焦り
 ### キーワード
-- [RBS](https://zenn.dev/articles/ruby-kaigi-2024-rookies-note/#rbs)
-- [TypeProf](https://zenn.dev/articles/ruby-kaigi-2024-rookies-note/#typeprof-1)
+- [RBS](https://zenn.dev/irsc/articles/ruby-kaigi-2024-rookies-note/#rbs)
+- [TypeProf](https://zenn.dev/irsc/articles/ruby-kaigi-2024-rookies-note/#typeprof-1)
 ### 資料
 https://speakerdeck.com/mame/good-first-issues-of-typeprof
 
@@ -466,7 +466,7 @@ Ruby supports Unicode "Name" Property
 - 文系だからとか逃げずに、コンピュータサイエンスの基礎だけでも勉強したい
 - アルゴリズムやデータ構造はしっかり身につけよう
 ### キーワード
-- [Name property](https://zenn.dev/articles/ruby-kaigi-2024-rookies-note/#name-property)
+- [Name property](https://zenn.dev/irsc/articles/ruby-kaigi-2024-rookies-note/#name-property)
 ### 資料
 TODO: 探す
 ## Lightning Talks
@@ -519,7 +519,7 @@ C依存を減らす挑戦
 RBPDFの作者
 REXML 、 SAX parser
 YJITによるパフォ改善
-Regexp より [StringScanner](https://zenn.dev/articles/ruby-kaigi-2024-rookies-note/#stringscanner) により早く
+Regexp より [StringScanner](https://zenn.dev/irsc/articles/ruby-kaigi-2024-rookies-note/#stringscanner) により早く
 ### Hotspot on Coverage
  APP上でCoverageを動かす
  akainaa gem 
@@ -558,7 +558,7 @@ Ruby3.4.0 リリース
      - `+` を書けばfrozenではないものとして扱われる
 - その他観点
     - パフォーマンス
-    - [GC](https://zenn.dev/articles/ruby-kaigi-2024-rookies-note/#gc)
+    - [GC](https://zenn.dev/irsc/articles/ruby-kaigi-2024-rookies-note/#gc)
  
 参考になりそう
 https://zenn.dev/mamayukawaii/articles/20240404003435
@@ -621,10 +621,10 @@ async の間 RubyGem 以外全て止まっているという構造は都合が�
     - ビルドシステムとかLockとか
 - Rubiest コミュニティの良さが詰まってる Keynote でした
 ### キーワード
-- [frozen string](https://zenn.dev/articles/ruby-kaigi-2024-rookies-note/#frozen-string)
-- [RBS](https://zenn.dev/articles/ruby-kaigi-2024-rookies-note/#rbs)
-- [GNU Autotools](https://zenn.dev/articles/ruby-kaigi-2024-rookies-note/#gnu-autotools)
-- [GVL](https://zenn.dev/articles/ruby-kaigi-2024-rookies-note/#gvl)
+- [frozen string](https://zenn.dev/irsc/articles/ruby-kaigi-2024-rookies-note/#frozen-string)
+- [RBS](https://zenn.dev/irsc/articles/ruby-kaigi-2024-rookies-note/#rbs)
+- [GNU Autotools](https://zenn.dev/irsc/articles/ruby-kaigi-2024-rookies-note/#gnu-autotools)
+- [GVL](https://zenn.dev/irsc/articles/ruby-kaigi-2024-rookies-note/#gvl)
 ## YJIT Makes Rails 1.7x Faster
 YJIT Makes Rails ~~1.7x~~ 1.8x Faster
 https://rubykaigi.org/2024/presentations/k0kubun.html#day3
@@ -648,7 +648,7 @@ Rails7.2~ Ruby3.3~ でデフォルトに
 - YJIT、なんと素晴らしい取り組み
 - Ruby と Rails のバージョンあげたい
 ### キーワード
-- [YJIT](https://zenn.dev/articles/ruby-kaigi-2024-rookies-note/#yjit-1)
+- [YJIT](https://zenn.dev/irsc/articles/ruby-kaigi-2024-rookies-note/#yjit-1)
 ### 資料
 https://speakerdeck.com/k0kubun/rubykaigi-2024
 
@@ -687,9 +687,9 @@ Ruby3.4はもっと早いよ
 - データ構造を学ぼう
 - パフォーマンスの話が続いている
 ### キーワード
-- [インスタンス変数](https://zenn.dev/articles/ruby-kaigi-2024-rookies-note/#%E3%82%A4%E3%83%B3%E3%82%B9%E3%82%BF%E3%83%B3%E3%82%B9%E5%A4%89%E6%95%B0)
-- [赤黒木](https://zenn.dev/articles/ruby-kaigi-2024-rookies-note/#%E8%B5%A4%E9%BB%92%E6%9C%A8)
-- [Object Shape](https://zenn.dev/articles/ruby-kaigi-2024-rookies-note/#object-shape-1)
+- [インスタンス変数](https://zenn.dev/irsc/articles/ruby-kaigi-2024-rookies-note/#%E3%82%A4%E3%83%B3%E3%82%B9%E3%82%BF%E3%83%B3%E3%82%B9%E5%A4%89%E6%95%B0)
+- [赤黒木](https://zenn.dev/irsc/articles/ruby-kaigi-2024-rookies-note/#%E8%B5%A4%E9%BB%92%E6%9C%A8)
+- [Object Shape](https://zenn.dev/irsc/articles/ruby-kaigi-2024-rookies-note/#object-shape-1)
 ### 資料
 TODO: 探す
 
@@ -716,8 +716,8 @@ Proc問題
 - まだまだ進化していくんだな
 - gemの歴史に興味を持った
 ### キーワード
-- [CGI](https://zenn.dev/articles/ruby-kaigi-2024-rookies-note/#cgi)
-- [ERB](https://zenn.dev/articles/ruby-kaigi-2024-rookies-note/#erb)
+- [CGI](https://zenn.dev/irsc/articles/ruby-kaigi-2024-rookies-note/#cgi)
+- [ERB](https://zenn.dev/irsc/articles/ruby-kaigi-2024-rookies-note/#erb)
 ### 資料
 https://speakerdeck.com/m_seki/erb-ancient-and-future
 
@@ -745,7 +745,7 @@ https://bugs.ruby-lang.org/issues/20387
 - 英語のセッションは理解度がガクンと落ちる
     - 次回はリアルタイム翻訳の仕組みを整えていこう
 ### キーワード
-- [ASAN](https://zenn.dev/articles/ruby-kaigi-2024-rookies-note/#asan-1)
+- [ASAN](https://zenn.dev/irsc/articles/ruby-kaigi-2024-rookies-note/#asan-1)
 ### 資料
 TODO: 探す
 
@@ -780,7 +780,7 @@ https://github.com/ledsun/orbital_ring
 - フロントエンドフレームワーク作れちゃうのすごい
 - Orbital Ring かっこいい……
 ### キーワード
-- [wasm](https://zenn.dev/articles/ruby-kaigi-2024-rookies-note/)
+- [wasm](https://zenn.dev/irsc/articles/ruby-kaigi-2024-rookies-note/)
 ### 資料
 https://speakerdeck.com/ledsun/using-ruby-in-the-browser-is-wonderful
 
@@ -837,7 +837,7 @@ Software Performance is Important
 Developer, Programer Performance is Important
 Better Experience by Tools Support
 - Rubocop
-- [Profiler](https://zenn.dev/articles/ruby-kaigi-2024-rookies-note/#profiler)
+- [Profiler](https://zenn.dev/irsc/articles/ruby-kaigi-2024-rookies-note/#profiler)
 - devtool
 
 Need better Parser
