@@ -1,5 +1,5 @@
 ---
-title: "Chrome拡張機能をサクッと作る"
+title: "Chrome拡張機能の開発をサクッと理解する"
 emoji: "⚙"
 type: "tech"
 topics:
@@ -7,40 +7,108 @@ topics:
   - "chrome"
   - "web"
 published: false
-published_at: "2023-08-10 20:00"
 ---
+# 基本を理解する
+下記の基本的な構造を紹介します。
+- マニフェスト
+- 3つのコンポーネント
+- 権限とAPI
+- その他主要な概念
+## マニフェスト
+すべてのChrome拡張機能が持っている拡張機能の設定や権限を定義するためのファイル。
+ここに下記のテンプレートやスクリプトにどのファイルを使用するかを記載する。
 
-## はじめに
-- Chrome拡張機能の概要と利点について説明する。
-- この記事で扱う内容と目標を紹介する。
+`manifest.json`
+```json
+{
+  "version": "0.0.1",
+  "author": "Author",
+  "name": "Extension Name",
+  "description": "Extension Desc",
+  "icons": {
+    "128": "icon128.png",
+    ...
+  },
+  "manifest_version": 3,
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "options_ui": {
+    "page": "options.html",
+  },
+  "permissions": [
+    "storage",
+    "activeTab"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "content-script.js"
+      ],
+    }
+  ],
+}
+```
+## コンポーネント
+### Content Script
+アクティブなタブに対して挿入されるスクリプト。
+特定のURLパターンに一致するページが開かれるたびに実行される。
+### Background Script
+Chromeを起動している間ずっと動いているスクリプト。
+後述のChromeのAPIを利用できる。
+### Action (Browser Action, Page Action)
+Chrome右上に表示される拡張機能アイコンをクリックした時に実行する処理。
+アイコンクリックをトリガーにして、ポップアップを表示したり、スクリプトを実行したり。
+BackgroundScript と同じく各種Chrome APIを利用できる。
+#### Popup
+アイコンをクリックしたときに表示されるHTML
+![](/images/chrome_extension_image.png)
+## 権限とAPI
+Chrome上のAPIや機能にアクセスするために、拡張機能に権限を付与する必要がある。
+使用する権限は manifest.json に記載する。
+下記のような機能・情報にアクセスできる
+- タブ
+- ストレージ
+- 履歴
+- クリップボードなど
 
-## 拡張機能の基本知識
-- Chrome拡張機能の定義と一般的な用途について解説する。
-- Chromeウェブストアの検索とインストール方法の紹介。
+https://developer.chrome.com/docs/extensions/reference/permissions-list?hl=ja
+## その他主要な概念
+### Message Passing
+Content Script, Background Script, Browser Action の3つのコンポーネント間でのやり取り。
+https://developer.chrome.com/docs/extensions/develop/concepts/messaging?hl=ja
+### Options
+右上のアイコンを右クリックして、行事される「オプション」をクリックした時に遷移する画面のHTML
+# フレームワークで開発する
+## Plasmo
+https://docs.plasmo.com/
+- TypeScript
+- React.js
+- tailwind
+- Stripe 連携など
+# 公開する
+## パッケージ化されていない拡張機能として読み込む
+ストアに公開せずに、個人使用する場合に使う方法です。
+1. chrome://extensions/ にアクセス
+2. 右上の デベロッパー モード をオンにする
+3. **パッケージ化されていない拡張機能を読み込む** をクリック
+4. 拡張機能のフォルダを選択
 
-## プロジェクトのセットアップ
-- フォルダー構成の作成と必要なファイルの説明。
-- マニフェストファイルの重要性と内容の解説。
+更新のたびに繰り返す必要があります。
+## ChromeWebStore で公開する
+### 1. ChromeWebStore に登録
+1. 規約とプラポリに同意
+2. 登録料を支払う（5ドル）
+### 2. 拡張機能ファイルのアップロード
+基本的には manifest.json が入った ZIP があれば良い
+### 3. 必要事項の記入
+- 商品の詳細
+- 画像アセット
 
-## ハンズオン：Hello World拡張機能
-- "Hello World"と表示するシンプルな拡張機能を作成する手順を説明する。
-- 拡張機能のアイコンの設定とポップアップページの作成方法を紹介する。
-
-## ユーザーインタラクションの追加
-- ボタンクリックやリンククリックなどのユーザーアクションに対応する方法を解説する。
-- イベントリスナーの追加と反応する関数の実装について説明する。
-
-## ストレージの利用
-- 拡張機能内でデータを保存する方法としてローカルストレージの使用を紹介する。
-- ユーザーの設定や状態を保存し、再利用する手法について説明する。
-
-## ページへの干渉とコンテンツスクリプト
-- ページのDOMを操作する方法としてコンテンツスクリプトの導入を説明する。
-- ページへのスクリプトの注入方法や制限事項について解説する。
-
-## Chromeウェブストアへの公開
-- 拡張機能をChromeウェブストアに公開する手順と注意事項について説明する。
-
-## おわりに
-- まとめと今後の展望を述べる。
-- 読者への参考資料や有用なリンクを提供する。
+など
+### 4. 審査
+初回の審査はだいたい数営業日で完了する
+その後の更新は数時間で完了する印象
