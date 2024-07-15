@@ -6,7 +6,8 @@ topics:
   - "chromeextension"
   - "chrome"
   - "web"
-published: false
+published_at: "2024-07-15 18:00"
+publication_name: "irsc"
 ---
 # はじめに
 Chrome拡張機能、便利ですよね。日々ブラウザを使って行う作業が効率化されます。
@@ -203,6 +204,3 @@ manifest.json がルートにある拡張機能のフォルダを、ZIP化して
 # おわりに
 Chrome拡張機能は、基本的な HTML/CSS/JavaScript の知識と、上記のような概念の知識があれば簡単に作れそうだということがわかっていただけたかと思います。
 まずは社内向けのツールの開発などで、拡張機能開発に挑戦してみてはいかがでしょうか！
-
-株式会社Inner Resource では、エンジニアを募集中です！
-https://irsc.jp
