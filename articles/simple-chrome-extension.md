@@ -6,6 +6,7 @@ topics:
   - "chromeextension"
   - "chrome"
   - "web"
+published: true
 published_at: "2024-07-15 18:00"
 publication_name: "irsc"
 ---
