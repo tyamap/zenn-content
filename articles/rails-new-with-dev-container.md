@@ -15,8 +15,14 @@ published: false
 ## VSCode をインストール
 ## Dev Containers 拡張機能をインストール
 ## rails-new をインストール
+rails をインストールするには、ruby やDBクライアントをインストールする必要があります。
+windows や macOS など環境によって手順に違いが出てきます。
+
+rails-new を使えば、ローカルに ruby や rails をインストールしなくても `rails new` できます。
+devcontainer を使うモチベーションとしては、環境依存をなくしたいというものがあるので、
+せっかくなのでrails-new を使いましょう。
+
 - https://github.com/rails/rails-new?tab=readme-ov-file
-- ローカルにrubyやrailsをインストールしなくても `rails new` できる
 - PATH を通す
 
 # rails-new を使ってプロジェクトを作成
@@ -43,7 +49,12 @@ DevContainerが起動するのを待ちます
 ```sh
 rails --version
 ```
-`Rails 7.2.2` と表示されました
+`Rails 7.2.2` と表示されました。
+2024/11/20 時点では rails-new は Rails 8.0.0 に対応していないようです。
+
+rails 8.0.0 に対応する差分は下記のコミットをご参考ください。
+
+https://github.com/tyamap/rails-new/commit/3c6dc71ae8e003682ac62ca83783599d1ce8c1e2
 
 localhost も起動してみます
 ```sh
@@ -54,8 +65,6 @@ rails s
 ![rails-welcome](./images/rails-welcome.png)
 
 無事アプリケーションを起動できました
-次回はこのプロジェクトを Rails 8.0.0 にアップグレードしてみます
-
 
 # 参考
 - https://railsguides.jp/getting_started_with_devcontainer.html
