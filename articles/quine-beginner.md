@@ -186,7 +186,7 @@ EOM
 ```rb
 # `先頭の 0 の連続数 < 末尾の 0 の連続数` であれば `reverse` すると節約できる
 bits = aa.gsub("\n", "").reverse.to_i(2)
-puts bits.to_s.size # => 1188
+puts bits.to_s.length # => 1188
 ```
 
 全文字数 `3980`, コード部分（1 で表現した部分）文字数 `1531` の AA が 1188 桁の整数になりました。
