@@ -7,6 +7,7 @@ topics:
   - "ruby"
   - "全文検索"
   - "opensearch"
+publication_name: "medley"
 published: true
 published_at: "2025-09-04 10:00"
 ---
