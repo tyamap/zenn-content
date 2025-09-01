@@ -9,7 +9,6 @@ topics:
   - "opensearch"
 publication_name: "medley"
 published: false
-published_at: "2025-09-04 10:00"
 ---
 
 こんにちは！ 株式会社メドレーでエンジニアをしています、山下です。
