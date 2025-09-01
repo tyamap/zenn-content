@@ -27,7 +27,7 @@ Rails と OpenSearch の技術スタックを前提にしていますが、他�
 
 # 検索機能の段階的実装
 
-## 基本的なLIKE検索
+## 1. 基本的なLIKE検索
 
 まずはミニマムに取り入れられる、SQLのLIKE検索について見てみます。
 
@@ -55,7 +55,7 @@ SELECT * FROM posts WHERE title REGEXP '^[A-Za-z]+$';
 - データ量・レコードあたりの文字数が少ない場合
 - 既存システムに最小限のコストで検索機能を追加したい場合
 
-## PostgreSQLの全文検索機能
+## 2. PostgreSQLの全文検索機能
 
 PostgreSQLには強力な組み込み全文検索機能があります。RDB内で完結できるため、システム構成をシンプルに保てるのが大きなメリットです。
 
@@ -86,7 +86,7 @@ https://zenn.dev/team_zenn/articles/zenn-search-tuning-story
 - PostgreSQLを既に使用しているプロジェクト
 - システム構成をシンプルに保ちたい
 
-## 全文検索エンジンの導入
+## 3. 全文検索エンジンの導入
 
 より高度な検索要件や大規模データに対応するには、全文検索エンジンが威力を発揮します。
 今回の記事のメインの内容になるので、詳しく見てみましょう。
@@ -210,7 +210,7 @@ Apache Lucene（Java製全文検索ライブラリ）
 弊社ではAWSを利用しており、他プロダクトで OpenSearch Service の運用実績もあったことから、OpenSearchを採用しました。
 アプリケーションは Rails で実装していますので、Rails アプリケーションに OpenSearch を導入するにあたり、どの Gem を使用するか、比較しました。
 
-## opensearch-ruby
+## 1. opensearch-ruby
 
 https://github.com/opensearch-project/opensearch-ruby
 
@@ -244,7 +244,7 @@ response = client.search(
 - 実装コストが高い
 - ActiveRecordとの連携等は自前で構築
 
-## elasticsearch-rails
+## 2. elasticsearch-rails
 
 https://github.com/elastic/elasticsearch-rails
 
@@ -280,7 +280,7 @@ Post.search("Hello")
 - OpenSearchとの将来的な互換性に不安
 - Elasticsearch前提の設計
 
-## Searchkick
+## 3. Searchkick
 
 簡単に全文検索を導入できる統合gemです。
 
@@ -318,7 +318,7 @@ Post.search("Hello")
 
 https://docs.aws.amazon.com/ja_jp/opensearch-service/latest/developerguide/bp.html
 
-## クラスタ構成とスペック選定
+## 1. クラスタ構成とスペック選定
 
 ### ノード構成
 
@@ -367,7 +367,7 @@ https://aws.amazon.com/opensearch-service/pricing/
 - **レプリカ**: プライマリ + レプリカでサイズは2倍
 
 
-## インデックス管理
+## 2. インデックス管理
 
 ### データ同期方法の検討
 
@@ -385,7 +385,7 @@ RDBと全文検索エンジンのデータをどのように同期するかは�
 
 インデックスにエイリアスを設定して、新しいエイリアスでデータをインデックスし、参照先を切り替えることでダウンタイムを抑えたリインデックスが可能です。
 
-## モニタリングとアラート
+## 3. モニタリングとアラート
 
 #### 主要メトリクス
 
@@ -400,7 +400,7 @@ RDBと全文検索エンジンのデータをどのように同期するかは�
 - 検索レスポンスが3秒を超える場合
 - JVM負荷平均が75%を超える場合
 
-## その他気をつけたこと
+## 4. その他気をつけたこと
 
 - **要件駆動**: 現在の要件に対してオーバーエンジニアリングしない
 - **段階的移行**: 一気に移行せず、段階的に機能を拡張
