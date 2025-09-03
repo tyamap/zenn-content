@@ -8,7 +8,8 @@ topics:
   - "全文検索"
   - "opensearch"
 publication_name: "medley"
-published: false
+published: true
+published_at: "2025-09-04 10:30"
 ---
 
 こんにちは！ 株式会社メドレーでエンジニアをしています、山下です。
@@ -172,7 +173,7 @@ https://zenn.dev/team_zenn/articles/zenn-search-tuning-story
 
 # Elasticsearch と OpenSearch
 
-少し前まで、全文検索といえば [Solr](https://solr.apache.org/) や [Elasticsaerch](https://www.elastic.co/jp/elasticsearch) がデファクトスタンダードだったと思います。
+少し前まで、全文検索といえば [Solr](https://solr.apache.org/) や [Elasticsearch](https://www.elastic.co/jp/elasticsearch) がデファクトスタンダードだったと思います。
 2021年に、[OpenSearch](https://opensearch.org/) という OSS プロジェクトが、Elasticsearch からフォークして誕生しました。
 少しこの辺りの経緯もさらっておきましょう。
 
@@ -249,7 +250,7 @@ response = client.search(
 https://github.com/elastic/elasticsearch-rails
 
 Rails統合でActiveRecordと連携するインターフェースを提供します。
-ElasticSearch公式のRails統合gemですが、OpenSearchでも今のところ動作します。
+ElasticSearch公式のRails統合Gemですが、OpenSearchでも今のところ動作します。
 
 ```ruby
 # Model
@@ -282,7 +283,7 @@ Post.search("Hello")
 
 ## 3. Searchkick
 
-簡単に全文検索を導入できる統合gemです。
+簡単に全文検索を導入できる統合Gemです。
 
 https://github.com/ankane/searchkick
 
