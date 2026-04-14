@@ -9,7 +9,7 @@ topics:
   - "正規表現"
   - "オートマトン"
 published: true
-published_at: "2026-04-15 18:00"
+published_at: "2026-04-15 20:00"
 ---
 
 # はじめに
