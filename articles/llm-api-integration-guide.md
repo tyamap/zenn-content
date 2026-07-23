@@ -9,7 +9,8 @@ topics:
   - "gemini"
   - "googlecloud"
 published: false
-published_at: 
+published_at: "2026-07-30 09:00"
+publication_name: "medley"
 ---
 
 こんにちは。株式会社メドレーでジョブメドレーの開発をしているエンジニアの山下です。
@@ -55,9 +56,11 @@ https://platform.claude.com/docs/en/build-with-claude/claude-in-amazon-bedrock
 
 Gemini on Vertex AI も、新機能が Developer API に先に来て Vertex AI が後追いになることがあります。
 
-- 社内に既存の LLM 利用実績があるなら、同じ経路に乗ることを検討する。認証・請求・レビューの仕組みを再利用できる
+- 社内に既存の LLM 利用実績があるなら、同じ経路に乗ることを検討する
+    - 認証・請求・レビューの仕組みを再利用できる
 - キャッシュや Batch、structured output など、使いたい機能が選んだ経路で提供されているか確認する
-- コストを機能単位で按分したいなら、Vertex AI のカスタムメタデータラベルのような、リクエストにラベルを付ける手段があるか確認する
+- コストを機能単位で按分したいなら、リクエストにラベルを付ける手段があるか確認する
+    - Vertex AI にはカスタムメタデータラベルがある
 
 # 2. モデル選定 — どのモデルで叩くか
 
@@ -66,11 +69,9 @@ Gemini on Vertex AI も、新機能が Developer API に先に来て Vertex AI �
 主要プロバイダのモデルはどこも「フラッグシップ / バランス / 軽量」の階層構造になっています。
 ラインナップは頻繁に入れ替わるので、選定時は必ず公式の価格ページを確認してください。
 
-https://platform.claude.com/docs/en/about-claude/pricing
-
-https://developers.openai.com/api/docs/pricing
-
-https://ai.google.dev/gemini-api/docs/pricing
+- [Anthropic の価格ページ](https://platform.claude.com/docs/en/about-claude/pricing)
+- [OpenAI の価格ページ](https://developers.openai.com/api/docs/pricing)
+- [Gemini の価格ページ](https://ai.google.dev/gemini-api/docs/pricing)
 
 tier を1つ下げると、価格はおよそ1桁近く変わります。
 つまりモデル選定は、コスト最適化の最大のレバーでもあります。
@@ -91,13 +92,13 @@ tier を1つ下げると、価格はおよそ1桁近く変わります。
 | Anthropic | 最低60日 |
 | Google | preview は最低2週間(GA の固定日数は明記なし) |
 
-https://platform.claude.com/docs/en/about-claude/model-deprecations
+各社の EOL ポリシーは下記にまとまっています。
 
-https://developers.openai.com/api/docs/deprecations
+- [Anthropic のモデル廃止ポリシー](https://platform.claude.com/docs/en/about-claude/model-deprecations)
+- [OpenAI の deprecations ページ](https://developers.openai.com/api/docs/deprecations)
+- [Gemini の models ページ](https://ai.google.dev/gemini-api/docs/models)
 
-https://ai.google.dev/gemini-api/docs/models
-
-Gemini の preview の2週間前通知は、models ページに記載されています。
+Gemini の preview の2週間前通知も、この models ページに記載されています。
 
 preview 系のモデルを本番に据えると、2週間で切替を迫られる可能性があるということです。
 つまり「いま最良のモデルを選ぶ」だけでなく「切替を前提に選ぶ」必要があります。
@@ -108,11 +109,19 @@ preview 系のモデルを本番に据えると、2週間で切替を迫られ�
 LLM API の料金は「入力トークン数 × 単価 + 出力トークン数 × 単価」の従量制で、出力単価は入力の5〜6倍です。
 削減手段を効果が大きい順に並べます。
 
-1. **そもそも呼ばない**。数値比較・正規表現・presence チェックで決まる判定を LLM に混ぜない。コードに降ろせば、その分のプロンプトも並列実行も丸ごと消えます。入力フォームのバリデーションで手前で弾ければ、LLM の判定自体が走りません
-2. **プロンプトキャッシュを使う**。詳しくは次の節で説明します
-3. **入力を削る**。4章で詳述する structured output を使えば出力の書式は API 側が保証するので、JSON の書式指示はプロンプトから消せます。ID をエコーバックさせる指示なども仕様上不要なら削ります
-4. **出力を削る**。下流で誰も使わない生成をさせない。私たちの例では、判定が true のときの理由文はどこにも表示していなかったので、false のときだけ生成するようにしました
-5. **モデルを下げる**。6章の検証レーンで精度を確認してから
+1. **そもそも呼ばない**
+    - 数値比較・正規表現・presence チェックで決まる判定を LLM に混ぜない。コードに降ろせば、その分のプロンプトも並列実行も丸ごと消える
+    - 入力フォームのバリデーションで手前で弾ければ、LLM の判定自体が走らない
+2. **プロンプトキャッシュを使う**
+    - 詳しくは次の節で
+3. **入力を削る**
+    - 4章で詳述する structured output を使えば出力の書式は API 側が保証するので、JSON の書式指示はプロンプトから消せる
+    - ID をエコーバックさせる指示なども仕様上不要なら削る
+4. **出力を削る**
+    - 下流で誰も使わない生成をさせない
+    - 私たちの例では、判定が true のときの理由文はどこにも表示していなかったので、false のときだけ生成するようにした
+5. **モデルを下げる**
+    - 6章の検証レーンで精度を確認してから
 
 実際、私たちは決定的な判定のコード降ろしと、不要な指示・生成を削る見直しだけで、入力トークンを大きく削減できました。
 
@@ -128,11 +137,11 @@ LLM API の料金は「入力トークン数 × 単価 + 出力トークン数 �
 | OpenAI | 完全自動(1,024トークン以上のプレフィックス) | なし | 書込み無料(新世代は1.25倍)、読出しは標準の10〜25% |
 | Google | implicit(自動) + explicit(cachedContents)の併用 | explicit は TTL 指定 | explicit はキャッシュ保持にストレージ時間課金 |
 
-https://platform.claude.com/docs/en/build-with-claude/prompt-caching
+各社の仕様は下記を参照してください。
 
-https://developers.openai.com/api/docs/guides/prompt-caching
-
-https://ai.google.dev/gemini-api/docs/generate-content/caching
+- [Anthropic のプロンプトキャッシュ](https://platform.claude.com/docs/en/build-with-claude/prompt-caching)
+- [OpenAI のプロンプトキャッシュ](https://developers.openai.com/api/docs/guides/prompt-caching)
+- [Gemini のコンテキストキャッシュ](https://ai.google.dev/gemini-api/docs/generate-content/caching)
 
 Gemini の explicit caching は、generateContent 版のページに記載されています。
 
@@ -169,26 +178,20 @@ https://openai.com/index/the-instruction-hierarchy/
 OpenAI は再帰スキーマに対応する一方で、数値の範囲制約が使えません。
 Anthropic は再帰非対応です。
 Gemini は `propertyOrdering` を明示しないと出力順が安定せず、複雑なスキーマは 400 エラーになります。
-スキーマ設計の前に制約一覧を確認してください。
+スキーマ設計の前に、それぞれの制約一覧を確認してください。
 
-https://developers.openai.com/api/docs/guides/structured-outputs
-
-https://platform.claude.com/docs/en/build-with-claude/structured-outputs
-
-https://ai.google.dev/gemini-api/docs/structured-output
+- [OpenAI の制約一覧](https://developers.openai.com/api/docs/guides/structured-outputs)
+- [Anthropic の制約一覧](https://platform.claude.com/docs/en/build-with-claude/structured-outputs)
+- [Gemini の制約一覧](https://ai.google.dev/gemini-api/docs/structured-output)
 
 **安全フィルタ**は、仕組み自体が3社で違います。
 Gemini はリクエスト単位で閾値を調整できます。
 OpenAI は生成 API と分離した無料の moderation API を提供しています。
 Anthropic は閾値設定を持たず、拒否時に `stop_reason: "refusal"` を返す方式です。
 医療・介護ドメインのテキストには「注射」「入浴介助」「精神科」のような語が普通に登場し、Gemini のデフォルト設定では誤ブロックの可能性があります。
-そのため私たちは safety settings を明示的にオフにしました。
-医療系での誤発動は、公式フォーラムでも報告されています。
+そのため私たちは [safety settings](https://ai.google.dev/gemini-api/docs/safety-settings) を明示的にオフにしました。
+医療系での誤発動は、[公式フォーラム](https://discuss.ai.google.dev/t/issue-with-gemini-safety-settings-in-medical-applications/2417)でも報告されています。
 フィルタを切る場合は、ロール分離や出力の検証といった、代わりの安全策を持っているのが前提です。
-
-https://ai.google.dev/gemini-api/docs/safety-settings
-
-https://discuss.ai.google.dev/t/issue-with-gemini-safety-settings-in-medical-applications/2417
 
 **決定性**は、どの社も保証していません。
 OpenAI と Gemini には `seed` パラメータがありますが best-effort ですし、Anthropic に至っては新しいモデルで temperature パラメータ自体が廃止されました。
@@ -211,15 +214,19 @@ LLM API のエラーは、リトライで直るものと直らないものを分
 429 対策の前に、レート制限の単位を知る必要があります。
 ここもプロバイダごとに思想が違います。
 
-- OpenAI はリクエスト数/分とトークン数/分の複数軸。上限は累積課金額に応じて自動昇格します
-- Anthropic は入力トークンと出力トークンが別々の上限を持ち、入力だけ・出力だけでも 429 になりえます。自動昇格に加えて、引き上げ申請・個別交渉の窓口があります。キャッシュ読出しは入力側に計上されないため、キャッシュが実効スループットの向上にも効きます
-- Vertex AI の新しめのモデルは Dynamic Shared Quota(DSQ)で、固定クォータも引き上げ申請も存在しません。429 は「自分の上限超過」ではなく「共有リソースプールの瞬間的な混雑」を意味します
+- OpenAI はリクエスト数/分とトークン数/分の複数軸
+    - 上限は累積課金額に応じて自動昇格する
+- Anthropic は入力トークンと出力トークンが別々の上限を持ち、入力だけ・出力だけでも 429 になりうる
+    - 自動昇格に加えて、引き上げ申請・個別交渉の窓口がある
+    - キャッシュ読出しは入力側に計上されないため、キャッシュが実効スループットの向上にも効く
+- Vertex AI の新しめのモデルは Dynamic Shared Quota(DSQ)で、固定クォータも引き上げ申請も存在しない
+    - 429 は「自分の上限超過」ではなく「共有リソースプールの瞬間的な混雑」を意味する
 
-https://developers.openai.com/api/docs/guides/rate-limits
+詳細は下記を参照してください。
 
-https://platform.claude.com/docs/en/api/rate-limits
-
-https://cloud.google.com/vertex-ai/generative-ai/docs/resources/dynamic-shared-quota
+- [OpenAI のレート制限](https://developers.openai.com/api/docs/guides/rate-limits)
+- [Anthropic のレート制限](https://platform.claude.com/docs/en/api/rate-limits)
+- [Vertex AI の Dynamic Shared Quota](https://cloud.google.com/vertex-ai/generative-ai/docs/resources/dynamic-shared-quota)
 
 とくに DSQ の 429 は誤解しやすいポイントです。
 自分のリクエスト数を数えていても防げず、プール側の混雑で発生します。
@@ -229,15 +236,17 @@ https://cloud.google.com/blog/products/ai-machine-learning/reduce-429-errors-on-
 
 対策の定石は次の3点です。
 
-- **並列数をクライアント側で制御する**。1件の処理で複数プロンプトを並列発行する設計だと、「処理の同時多発 × プロンプト並列」の掛け算でリクエストが瞬間的に集中します。並列の上限は自分で持ちます
-- **429/5xx はジッター付き指数バックオフでリトライする**。`retry-after` ヘッダが返ってきたらそれに従います。Anthropic は「それより早いリトライは失敗する」と明記しています。固定間隔の即時リトライは、混雑をさらに悪化させるアンチパターンです
-- **リアルタイム性が不要な処理は Batch API に逃がす**。3社とも50%割引で、同期 API とは別のクォータ枠なので、レート制限そのものを回避できます
-
-https://platform.claude.com/docs/en/build-with-claude/batch-processing
-
-https://developers.openai.com/api/docs/guides/batch
-
-https://ai.google.dev/gemini-api/docs/batch-api
+- **並列数をクライアント側で制御する**
+    - 1件の処理で複数プロンプトを並列発行する設計だと、「処理の同時多発 × プロンプト並列」の掛け算でリクエストが瞬間的に集中する
+    - 並列の上限は自分で持つ
+- **429/5xx はジッター付き指数バックオフでリトライする**
+    - `retry-after` ヘッダが返ってきたらそれに従う。Anthropic は「それより早いリトライは失敗する」と明記している
+    - 固定間隔の即時リトライは、混雑をさらに悪化させるアンチパターン
+- **リアルタイム性が不要な処理は Batch API に逃がす**
+    - 3社とも50%割引で、同期 API とは別のクォータ枠なので、レート制限そのものを回避できる
+    - [Anthropic の Batch API](https://platform.claude.com/docs/en/build-with-claude/batch-processing)
+    - [OpenAI の Batch API](https://developers.openai.com/api/docs/guides/batch)
+    - [Gemini の Batch API](https://ai.google.dev/gemini-api/docs/batch-api)
 
 ## 200 なのに失敗、に備える
 
@@ -246,10 +255,10 @@ HTTP ステータスだけ見ていると、すり抜ける失敗があります
 Anthropic は `stop_reason: "refusal"`、OpenAI は structured output の `refusal` フィールドで返します。
 Gemini は2パターンあり、入力段階でブロックされると candidates 自体が空になり、生成段階でブロックされると content が空で `finishReason: SAFETY` になります。
 これらはリトライで直らないので、リトライ対象から外し、明示的に検出してフォールバックに回します。
+拒否時のレスポンス仕様は下記を参照してください。
 
-https://platform.claude.com/docs/en/build-with-claude/handling-stop-reasons
-
-https://docs.cloud.google.com/gemini-enterprise-agent-platform/reference/rest/v1/GenerateContentResponse
+- [Anthropic の stop reason](https://platform.claude.com/docs/en/build-with-claude/handling-stop-reasons)
+- [Gemini の GenerateContentResponse](https://docs.cloud.google.com/gemini-enterprise-agent-platform/reference/rest/v1/GenerateContentResponse)
 
 ## フォールバック先を最初に決める
 
@@ -277,8 +286,10 @@ LLM を「失敗したら人間に返す高速化レイヤー」と位置づけ�
 true / false の判定のような二値タスクの間違い方は、見逃しと誤検知の2種類です。
 それぞれに対応する指標があります。
 
-- **再現率(recall)** は、実際に該当するもののうち「該当」と判定できた割合。低いほど見逃しが多い
-- **適合率(precision)** は、「該当」と判定したもののうち実際に該当していた割合。低いほど誤検知が多い
+- **再現率(recall)** は、実際に該当するもののうち「該当」と判定できた割合
+    - 低いほど見逃しが多い
+- **適合率(precision)** は、「該当」と判定したもののうち実際に該当していた割合
+    - 低いほど誤検知が多い
 
 2つはトレードオフの関係にあり、どちらを優先するかはタスクの性質で決まります。
 不正検知のように、見逃しが事故に直結し、誤検知は人手の再確認で救済できるタスクなら、再現率を優先して適合率は下流で補います。
@@ -299,8 +310,12 @@ LLM 機能のテストには固有の難しさがあります。
 
 この状況で使えるテスト手法が知られています。
 
-- **Property-based Testing** は、個別の正解ではなく「すべての出力が満たすべき性質」を検証します。true / false の判定機能なら「出力は必ず true か false のどちらか」「false なら理由が必ず付く」。前述の structured output と組み合わせると、性質の多くを API 側で保証できます
-- **Metamorphic Testing** は、入力を変えたときに出力がどう変わる「べき」かの関係を検証します。判定機能なら「固有名詞のような無関係な箇所を変えても判定は変わらない」「条件に反する表現を追加したら、判定は false 側にしか動かない」。とくに後者のような方向つきの関係は、前節で定義した「間違いの非対称性」をそのままテストにできます
+- **Property-based Testing** は、個別の正解ではなく「すべての出力が満たすべき性質」を検証する
+    - true / false の判定機能なら「出力は必ず true か false のどちらか」「false なら理由が必ず付く」
+    - 前述の structured output と組み合わせると、性質の多くを API 側で保証できる
+- **Metamorphic Testing** は、入力を変えたときに出力がどう変わる「べき」かの関係を検証する
+    - 判定機能なら「固有名詞のような無関係な箇所を変えても判定は変わらない」「条件に反する表現を追加したら、判定は false 側にしか動かない」
+    - とくに後者のような方向つきの関係は、前節で定義した「間違いの非対称性」をそのままテストにできる
 
 オラクル問題と各手法については、こちらの記事が参考になります。
 
@@ -311,9 +326,13 @@ https://zenn.dev/hacobell_dev/articles/48672302988d40
 そして最終検証は本番トラフィックで行います。
 段階は3つです。
 
-1. **シャドー実行**。本番の入力で LLM を動かし、結果は使わず蓄積だけする。既存の人手フローの結果と突き合わせられるので、前述の適合率・再現率をここで実測できます
-2. **少量リリース**。対象の数%だけ結果を実際に使い、計測する
-3. **段階拡大**。数字を確認しながら比率を上げる
+1. **シャドー実行**
+    - 本番の入力で LLM を動かし、結果は使わず蓄積だけする
+    - 既存の人手フローの結果と突き合わせられるので、前述の適合率・再現率をここで実測できる
+2. **少量リリース**
+    - 対象の数%だけ結果を実際に使い、計測する
+3. **段階拡大**
+    - 数字を確認しながら比率を上げる
 
 私たちもシャドー実行で既存フローとの比較を行い、ズレる箇所を特定・修正してから、1% → 段階拡大の順で本番適用しました。
 
